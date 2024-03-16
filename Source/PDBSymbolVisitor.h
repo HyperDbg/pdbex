@@ -366,7 +366,7 @@ class PDBSymbolVisitor
 		PDBReconstructorBase* m_ReconstructVisitor;
 
 		//
-		// Settigs for constructing member definitions.
+		// Settings for constructing member definitions.
 		//
 		void* m_MemberDefinitionSettings;
 };

@@ -58,7 +58,7 @@ typedef struct _SID
 } SID, *PSID;
 ```
 
-_(**-k-** switch is responsible for ommiting the header.)_
+_(**-k-** switch is responsible for omitting the header.)_
 
 You can even control if definition of referenced symbols should be inlined by **-e [n|i|a]** option.
 

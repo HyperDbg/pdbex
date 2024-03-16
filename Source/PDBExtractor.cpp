@@ -626,7 +626,7 @@ PDBExtractor::DumpOneSymbol()
 	PrintPDBHeader();
 
 	//
-	// InlineAll supresses PrintReferencedTypes.
+	// InlineAll suppresses PrintReferencedTypes.
 	//
 
 	if (m_Settings.PrintReferencedTypes &&

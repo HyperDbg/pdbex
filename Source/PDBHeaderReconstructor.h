@@ -242,7 +242,7 @@ class PDBHeaderReconstructor
 		Settings* m_Settings;
 
 		//
-		// Everytime visitor enters a new member (UDT field),
+		// Every time visitor enters a new member (UDT field),
 		// it pushes the current offset here.
 		// In case the current member is a new struct (or any other UDT)
 		// which will be expanded, this property

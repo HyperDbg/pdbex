@@ -45,7 +45,7 @@ class PDBReconstructorBase
 		}
 
 		//
-		// Called for each field of the curent 'enum' type.
+		// Called for each field of the current 'enum' type.
 		//
 		virtual
 		void
