@@ -4,7 +4,7 @@
 #include <string>
 
 #include <dia2.h>
-
+#include <string>
 #include <set>
 #include <unordered_set>
 #include <unordered_map>
@@ -315,9 +315,9 @@ class PDB
 		//
 		// Opens particular PDB file and parses it.
 		//
-		// Returns non-zero value on success.
+		// Returns S_OK value on success.
 		//
-		BOOL
+		HRESULT
 		Open(
 			IN const CHAR* Path
 			);
