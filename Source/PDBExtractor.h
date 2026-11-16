@@ -56,6 +56,15 @@ class PDBExtractor
 			);
 
 		void
+		ParseNextParameter(
+			int argc,
+			char** argv,
+			int ArgumentPointer,
+			char** NextArgument,
+			size_t* NextArgumentLength
+			);
+
+		void
 		OpenPDBFile();
 
 		void

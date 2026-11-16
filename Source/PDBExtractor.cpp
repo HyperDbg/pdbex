@@ -174,6 +174,23 @@ PDBExtractor::PrintUsage()
 }
 
 void
+PDBExtractor::ParseNextParameter(
+	int      argc,
+	char** argv,
+	int      ArgumentPointer,
+	char** NextArgument,
+	size_t* NextArgumentLength)
+{
+	*NextArgument = ArgumentPointer < argc
+		? argv[ArgumentPointer + 1]
+		: nullptr;
+
+	*NextArgumentLength = *NextArgument
+		? strlen(*NextArgument)
+		: 0;
+}
+
+void
 PDBExtractor::ParseParameters(
 	int argc,
 	char** argv
@@ -206,13 +223,8 @@ PDBExtractor::ParseParameters(
 		const char* CurrentArgument = argv[ArgumentPointer];
 		size_t CurrentArgumentLength = strlen(CurrentArgument);
 
-		const char* NextArgument = ArgumentPointer < argc
-			? argv[ArgumentPointer + 1]
-			: nullptr;
-
-		size_t NextArgumentLength = NextArgument
-			? strlen(NextArgument)
-			: 0;
+		char* NextArgument = nullptr;
+		size_t NextArgumentLength = 0;
 
 		//
 		// Handling of -X- switches.
@@ -238,6 +250,14 @@ PDBExtractor::ParseParameters(
 		switch (CurrentArgument[1])
 		{
 			case 'o':
+
+				ParseNextParameter(
+					argc,
+					argv,
+					ArgumentPointer,
+					&NextArgument,
+					&NextArgumentLength);
+
 				if (!NextArgument)
 				{
 					throw PDBDumperException(MESSAGE_INVALID_PARAMETERS);
@@ -264,6 +284,14 @@ PDBExtractor::ParseParameters(
 				break;
 
 			case 't':
+
+				ParseNextParameter(
+					argc,
+					argv,
+					ArgumentPointer,
+					&NextArgument,
+					&NextArgumentLength);
+
 				if (!NextArgument)
 				{
 					throw PDBDumperException(MESSAGE_INVALID_PARAMETERS);
@@ -279,6 +307,14 @@ PDBExtractor::ParseParameters(
 				break;
 
 			case 'e':
+
+				ParseNextParameter(
+					argc,
+					argv,
+					ArgumentPointer,
+					&NextArgument,
+					&NextArgumentLength);
+
 				if (!NextArgument)
 				{
 					throw PDBDumperException(MESSAGE_INVALID_PARAMETERS);
@@ -310,6 +346,14 @@ PDBExtractor::ParseParameters(
 				break;
 
 			case 'u':
+
+				ParseNextParameter(
+					argc,
+					argv,
+					ArgumentPointer,
+					&NextArgument,
+					&NextArgumentLength);
+
 				if (!NextArgument)
 				{
 					throw PDBDumperException(MESSAGE_INVALID_PARAMETERS);
@@ -320,6 +364,14 @@ PDBExtractor::ParseParameters(
 				break;
 
 			case 's':
+
+				ParseNextParameter(
+					argc,
+					argv,
+					ArgumentPointer,
+					&NextArgument,
+					&NextArgumentLength);
+
 				if (!NextArgument)
 				{
 					throw PDBDumperException(MESSAGE_INVALID_PARAMETERS);
@@ -330,6 +382,14 @@ PDBExtractor::ParseParameters(
 				break;
 
 			case 'r':
+
+				ParseNextParameter(
+					argc,
+					argv,
+					ArgumentPointer,
+					&NextArgument,
+					&NextArgumentLength);
+
 				if (!NextArgument)
 				{
 					throw PDBDumperException(MESSAGE_INVALID_PARAMETERS);
@@ -340,6 +400,14 @@ PDBExtractor::ParseParameters(
 				break;
 
 			case 'g':
+
+				ParseNextParameter(
+					argc,
+					argv,
+					ArgumentPointer,
+					&NextArgument,
+					&NextArgumentLength);
+
 				if (!NextArgument)
 				{
 					throw PDBDumperException(MESSAGE_INVALID_PARAMETERS);
